@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
-import { Afacad, Jersey_15 } from "next/font/google";
 
 import { RoutePreloader } from "@/components/route-preloader";
 import { defaultOgImage, siteConfig } from "@/lib/seo";
@@ -22,11 +21,10 @@ const preloaderVideoSources = [
   },
 ];
 
-// adjustFontFallback: false on the heavy display fonts — Next's default
-// Arial-based metric shim is a poor proxy for Impact-style display weights
-// and was causing visible line-clipping on Safari/iOS when the OTF was
-// still loading. Explicit fallback chains land on a heavier system face
-// instead of the browser default serif if the OTF fails outright.
+// adjustFontFallback: false keeps Safari on the real font metrics instead
+// of Next's Arial-based metric shim. The display faces use heavier system
+// fallbacks, while the smaller text fonts are vendored locally to avoid
+// browser differences in Google font subset selection.
 // next/font requires literal array values, so the chain is inlined per call.
 
 const freeFat = localFont({
@@ -53,19 +51,22 @@ const strokeBlue = localFont({
   variable: "--font-display",
 });
 
-const jersey = Jersey_15({
+const jersey = localFont({
+  adjustFontFallback: false,
   display: "swap",
   fallback: ["Courier New", "ui-monospace", "monospace"],
-  subsets: ["latin"],
+  src: "../../public/cozydesigns/Jersey15-Regular-latin.woff2",
   variable: "--font-body",
   weight: "400",
 });
 
-const afacad = Afacad({
+const afacad = localFont({
+  adjustFontFallback: false,
   display: "swap",
   fallback: ["-apple-system", "BlinkMacSystemFont", "Segoe UI", "Helvetica", "Arial", "sans-serif"],
-  subsets: ["latin"],
+  src: "../../public/cozydesigns/Afacad-Variable-latin.woff2",
   variable: "--font-copy",
+  weight: "400 700",
 });
 
 export const metadata: Metadata = {
