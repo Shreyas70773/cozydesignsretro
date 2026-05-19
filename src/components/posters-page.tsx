@@ -37,7 +37,7 @@ export function PostersPage() {
                 width={1200}
               />
               <div className={styles.posterOverlay}>
-                <h2 className={styles.posterTitle}>{poster.alt}</h2>
+                <h2 className={styles.posterTitle}>{poster.title}</h2>
                 <p className={styles.posterDescription}>{poster.description}</p>
                 <a className={styles.posterLink} href={`/posters#${poster.slug}`}>
                   /posters#{poster.slug}

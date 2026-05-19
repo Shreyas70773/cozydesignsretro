@@ -28,7 +28,7 @@ export default function Page() {
               name: siteConfig.creatorName,
             },
             image: absoluteUrl(poster.src),
-            name: poster.alt,
+            name: poster.title,
             url: `${absoluteUrl("/posters")}#${poster.slug}`,
           })),
           name: "Retro Comic Poster Design",
