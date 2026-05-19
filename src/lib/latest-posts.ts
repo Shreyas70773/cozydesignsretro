@@ -40,25 +40,41 @@ function shouldUseNetlifyBlobs() {
   return process.env.NETLIFY === "true" || Boolean(globalThis.netlifyBlobsContext);
 }
 
+// getStore() throws synchronously with MissingBlobsEnvironmentError when no
+// Lambda runtime context is present (e.g. during `next build` static prerender).
+// Return undefined in that case so callers can treat the store as empty.
+function tryGetStore(name: string) {
+  try {
+    return getStore({ consistency: "strong", name });
+  } catch {
+    return undefined;
+  }
+}
+
 function getPostsStore() {
-  return getStore({ consistency: "strong", name: postStoreName });
+  return tryGetStore(postStoreName);
 }
 
 function getMediaStore() {
-  return getStore({ consistency: "strong", name: mediaStoreName });
+  return tryGetStore(mediaStoreName);
 }
 
 export async function getLatestPosts(): Promise<LatestPost[]> {
   if (shouldUseNetlifyBlobs()) {
-    const posts = ((await getPostsStore().get(postsBlobKey, {
-      type: "json",
-    }).catch((error: unknown) => {
-      if ((error as { status?: number }).status === 404) {
-        return [];
-      }
-
+    const store = getPostsStore();
+    if (!store) {
       return [];
-    })) ?? []) as LatestPost[];
+    }
+
+    const posts = ((await store
+      .get(postsBlobKey, { type: "json" })
+      .catch((error: unknown) => {
+        if ((error as { status?: number }).status === 404) {
+          return [];
+        }
+
+        return [];
+      })) ?? []) as LatestPost[];
 
     return sortPosts(posts);
   }
@@ -126,7 +142,11 @@ async function writeLatestPosts(posts: LatestPost[]) {
   const sortedPosts = sortPosts(posts);
 
   if (shouldUseNetlifyBlobs()) {
-    await getPostsStore().setJSON(postsBlobKey, sortedPosts);
+    const store = getPostsStore();
+    if (!store) {
+      throw new Error("Netlify Blobs store unavailable in current runtime");
+    }
+    await store.setJSON(postsBlobKey, sortedPosts);
     return;
   }
 
@@ -146,12 +166,17 @@ export async function saveMediaFile({
   const mediaKey = filename;
 
   if (shouldUseNetlifyBlobs()) {
+    const store = getMediaStore();
+    if (!store) {
+      throw new Error("Netlify Blobs media store unavailable in current runtime");
+    }
+
     const mediaBody = bytes.buffer.slice(
       bytes.byteOffset,
       bytes.byteOffset + bytes.byteLength,
     ) as ArrayBuffer;
 
-    await getMediaStore().set(mediaKey, mediaBody, {
+    await store.set(mediaKey, mediaBody, {
       metadata: { contentType },
     });
 
@@ -172,7 +197,12 @@ export async function saveMediaFile({
 
 export async function getStoredMedia(mediaKey: string) {
   if (shouldUseNetlifyBlobs()) {
-    const result = await getMediaStore().getWithMetadata(mediaKey, {
+    const store = getMediaStore();
+    if (!store) {
+      return undefined;
+    }
+
+    const result = await store.getWithMetadata(mediaKey, {
       type: "arrayBuffer",
     });
 
@@ -213,7 +243,11 @@ async function deleteStoredMedia(post: LatestPost) {
   }
 
   if (shouldUseNetlifyBlobs()) {
-    await getMediaStore().delete(post.mediaKey).catch(() => undefined);
+    const store = getMediaStore();
+    if (!store) {
+      return;
+    }
+    await store.delete(post.mediaKey).catch(() => undefined);
     return;
   }
 
