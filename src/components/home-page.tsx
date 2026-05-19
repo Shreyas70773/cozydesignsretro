@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
 import styles from "./home-page.module.css";
+import { AutoplayVideo } from "./autoplay-video";
 import { SiteNav } from "./site-nav";
 import { SiteFooter } from "./site-footer";
 
@@ -255,14 +256,11 @@ export function HomePage() {
             <div className={styles.heroFrame}>
               <div className={styles.heroMedia}>
                 <div className={styles.heroVideoFrame}>
-                  <video
-                    autoPlay
+                  <AutoplayVideo
                     className={styles.heroVideo}
                     loop
-                    muted
-                    playsInline
                     poster="/cozydesigns/hero-frame-preview.png"
-                    preload="metadata"
+                    preload="auto"
                     src="/cozydesigns/cozy-hero-video-new-h264.mp4"
                   />
                 </div>

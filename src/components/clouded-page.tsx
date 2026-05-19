@@ -2,6 +2,7 @@
 
 import type { CSSProperties, ReactNode } from "react";
 
+import { AutoplayVideo } from "./autoplay-video";
 import styles from "./clouded-page.module.css";
 import { SiteFooter } from "./site-footer";
 import { SiteNav } from "./site-nav";
@@ -80,21 +81,18 @@ function ImageLayer({ alt, className, fit = "cover", img, name, ...box }: ImageL
   return (
     <div className={`${styles.imageLayer} ${className ?? ""}`} style={pos(box)}>
       {videoSrc ? (
-        <video
+        <AutoplayVideo
           aria-label={alt}
-          autoPlay
           className={mediaClass}
           height={Math.round(box.h)}
           loop
-          muted
-          playsInline
           poster={asset(name)}
-          preload="metadata"
+          preload="auto"
           style={imgPos(img)}
           width={Math.round(box.w)}
         >
           <source src={videoSrc} type="video/mp4" />
-        </video>
+        </AutoplayVideo>
       ) : (
         <img
           alt={alt}
@@ -113,18 +111,15 @@ function ImageLayer({ alt, className, fit = "cover", img, name, ...box }: ImageL
 
 function MotionClip({ alt, className, name }: { alt: string; className?: string; name: string }) {
   return (
-    <video
+    <AutoplayVideo
       aria-label={alt}
-      autoPlay
       className={className}
       loop
-      muted
-      playsInline
       poster={asset(name)}
-      preload="metadata"
+      preload="auto"
     >
       <source src={motionAssets[name]} type="video/mp4" />
-    </video>
+    </AutoplayVideo>
   );
 }
 

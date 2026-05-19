@@ -22,26 +22,40 @@ const preloaderVideoSources = [
   },
 ];
 
+// adjustFontFallback: false on the heavy display fonts — Next's default
+// Arial-based metric shim is a poor proxy for Impact-style display weights
+// and was causing visible line-clipping on Safari/iOS when the OTF was
+// still loading. Explicit fallback chains land on a heavier system face
+// instead of the browser default serif if the OTF fails outright.
+// next/font requires literal array values, so the chain is inlined per call.
+
 const freeFat = localFont({
+  adjustFontFallback: false,
   display: "swap",
+  fallback: ["Impact", "Haettenschweiler", "Arial Black", "Helvetica", "sans-serif"],
   src: "../../public/cozydesigns/FREEFATFONT-Regular.otf",
   variable: "--font-stroke",
 });
 
 const bigFatStroke = localFont({
+  adjustFontFallback: false,
   display: "swap",
+  fallback: ["Impact", "Haettenschweiler", "Arial Black", "Helvetica", "sans-serif"],
   src: "../../public/cozydesigns/BigFatStroke-Regular.otf",
   variable: "--font-outline",
 });
 
 const strokeBlue = localFont({
+  adjustFontFallback: false,
   display: "swap",
+  fallback: ["Impact", "Haettenschweiler", "Arial Black", "Helvetica", "sans-serif"],
   src: "../../public/cozydesigns/CUSTOMBIG.otf",
   variable: "--font-display",
 });
 
 const jersey = Jersey_15({
   display: "swap",
+  fallback: ["Courier New", "ui-monospace", "monospace"],
   subsets: ["latin"],
   variable: "--font-body",
   weight: "400",
@@ -49,6 +63,7 @@ const jersey = Jersey_15({
 
 const afacad = Afacad({
   display: "swap",
+  fallback: ["-apple-system", "BlinkMacSystemFont", "Segoe UI", "Helvetica", "Arial", "sans-serif"],
   subsets: ["latin"],
   variable: "--font-copy",
 });

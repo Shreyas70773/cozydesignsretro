@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import styles from "./animations-page.module.css";
+import { AutoplayVideo } from "./autoplay-video";
 import { SiteFooter } from "./site-footer";
 import { SiteNav } from "./site-nav";
 
@@ -55,14 +56,11 @@ function VideoPanel({
 }) {
   return (
     <figure aria-label={label} className={`${styles.videoPanel} ${className}`}>
-      <video
-        autoPlay
+      <AutoplayVideo
         className={styles.video}
         loop
-        muted
-        playsInline
         poster={asset("punk-rocky-hero.png")}
-        preload="metadata"
+        preload="auto"
         src={`${assetPath}${src}`}
         width={1137}
         height={872}
