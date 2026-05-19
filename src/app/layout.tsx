@@ -33,7 +33,7 @@ const freeFat = localFont({
   adjustFontFallback: false,
   display: "swap",
   fallback: ["Impact", "Haettenschweiler", "Arial Black", "Helvetica", "sans-serif"],
-  src: "../../public/cozydesigns/FREEFATFONT-Regular.otf",
+  src: "../../public/cozydesigns/FREEFATFONT-Regular.woff2",
   variable: "--font-stroke",
 });
 
@@ -41,7 +41,7 @@ const bigFatStroke = localFont({
   adjustFontFallback: false,
   display: "swap",
   fallback: ["Impact", "Haettenschweiler", "Arial Black", "Helvetica", "sans-serif"],
-  src: "../../public/cozydesigns/BigFatStroke-Regular.otf",
+  src: "../../public/cozydesigns/BigFatStroke-Regular.woff2",
   variable: "--font-outline",
 });
 
@@ -49,7 +49,7 @@ const strokeBlue = localFont({
   adjustFontFallback: false,
   display: "swap",
   fallback: ["Impact", "Haettenschweiler", "Arial Black", "Helvetica", "sans-serif"],
-  src: "../../public/cozydesigns/CUSTOMBIG.otf",
+  src: "../../public/cozydesigns/CUSTOMBIG.woff2",
   variable: "--font-display",
 });
 
