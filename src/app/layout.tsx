@@ -21,10 +21,10 @@ const preloaderVideoSources = [
   },
 ];
 
-// adjustFontFallback: false keeps Safari on the real font metrics instead
-// of Next's Arial-based metric shim. The display faces use heavier system
-// fallbacks, while the smaller text fonts are vendored locally to avoid
-// browser differences in Google font subset selection.
+// adjustFontFallback: false keeps Apple platforms on the real font metrics
+// instead of Next's Arial-based metric shim. The main display font uses a
+// sanitized build with the SVG-in-OpenType table removed so iPhone/Mac render
+// the same outline glyphs as Chromium/Windows.
 // next/font requires literal array values, so the chain is inlined per call.
 
 const freeFat = localFont({
@@ -47,7 +47,7 @@ const strokeBlue = localFont({
   adjustFontFallback: false,
   display: "swap",
   fallback: ["Impact", "Haettenschweiler", "Arial Black", "Helvetica", "sans-serif"],
-  src: "../../public/cozydesigns/CUSTOMBIG.woff2",
+  src: "../../public/cozydesigns/CUSTOMBIG-NoSVG.woff2",
   variable: "--font-display",
 });
 
