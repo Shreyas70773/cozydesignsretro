@@ -1,0 +1,131 @@
+.page {
+  background: linear-gradient(180deg, #fff8de 0%, #f8edc7 100%);
+  color: var(--color-ink);
+  min-height: 100vh;
+  padding: 8.5rem clamp(1.2rem, 5vw, 5rem) clamp(4rem, 8vw, 7rem);
+}
+
+.document {
+  margin: 0 auto;
+  max-width: 58rem;
+}
+
+.eyebrow {
+  color: var(--color-teal-dark);
+  font-family: var(--font-body);
+  font-size: clamp(1.2rem, 1.8vw, 1.65rem);
+  letter-spacing: 0.16em;
+  line-height: 1;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+}
+
+.title {
+  -webkit-text-stroke: 0.055em #050505;
+  color: var(--color-cream);
+  filter: drop-shadow(0.34rem 0.44rem 0 #050505);
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 7vw, 6.5rem);
+  font-synthesis: none;
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 0.82;
+  margin: 0;
+  max-width: 10ch;
+  paint-order: stroke fill;
+  text-transform: uppercase;
+}
+
+.intro,
+.section p {
+  color: #3f3f3f;
+  font-family: var(--font-copy);
+  font-size: clamp(1rem, 1.2vw, 1.16rem);
+  line-height: 1.65;
+}
+
+.intro {
+  margin: clamp(1.5rem, 3vw, 2.1rem) 0 0;
+  max-width: 42rem;
+}
+
+.sections {
+  display: grid;
+  gap: 1.45rem;
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.section {
+  border-top: 3px solid var(--color-black);
+  padding-top: 1.15rem;
+}
+
+.section h2 {
+  color: var(--color-teal-dark);
+  font-family: var(--font-body);
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  margin: 0 0 0.65rem;
+  text-transform: uppercase;
+}
+
+.section p {
+  margin: 0;
+}
+
+.relatedLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.relatedLinks a {
+  align-items: center;
+  background: var(--color-orange);
+  border: 3px solid var(--color-black);
+  color: var(--color-black);
+  display: inline-flex;
+  font-family: var(--font-body);
+  font-size: clamp(1.1rem, 1.7vw, 1.45rem);
+  justify-content: center;
+  letter-spacing: 0.09em;
+  line-height: 1;
+  min-height: 3rem;
+  padding: 0.7rem 1rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.relatedLinks a + a {
+  background: var(--color-teal-dark);
+  border-left: 0;
+  color: var(--color-cream);
+}
+
+@media (max-width: 720px) {
+  .page {
+    padding: 2rem 1rem 7.6rem;
+  }
+
+  .title {
+    font-size: clamp(2.65rem, 13vw, 4rem);
+    letter-spacing: -0.07em;
+    max-width: 100%;
+  }
+
+  .relatedLinks {
+    flex-direction: column;
+  }
+
+  .relatedLinks a {
+    width: 100%;
+  }
+
+  .relatedLinks a + a {
+    border-left: 3px solid var(--color-black);
+    border-top: 0;
+  }
+}

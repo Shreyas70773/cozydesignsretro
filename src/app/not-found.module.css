@@ -1,0 +1,88 @@
+.page {
+  align-items: center;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(255, 159, 0, 0.22), transparent 18rem),
+    linear-gradient(180deg, #fff8de 0%, #f5f2e9 100%);
+  color: var(--color-black);
+  display: grid;
+  min-height: 100vh;
+  padding: 8rem clamp(1rem, 5vw, 4rem) 5rem;
+}
+
+.panel {
+  margin: 0 auto;
+  max-width: 52rem;
+  text-align: center;
+}
+
+.eyebrow {
+  color: var(--color-teal-dark);
+  font-family: var(--font-body);
+  font-size: clamp(2rem, 6vw, 5rem);
+  letter-spacing: 0.12em;
+  line-height: 1;
+  margin: 0 0 0.75rem;
+}
+
+.title {
+  -webkit-text-stroke: 0.055em #050505;
+  color: var(--color-cream);
+  filter: drop-shadow(0.32rem 0.42rem 0 #050505);
+  font-family: var(--font-display);
+  font-size: clamp(3.4rem, 11vw, 8rem);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 0.82;
+  margin: 0;
+  paint-order: stroke fill;
+  text-transform: uppercase;
+}
+
+.copy {
+  color: #3f3f3f;
+  font-family: var(--font-copy);
+  font-size: clamp(1.05rem, 2.1vw, 1.35rem);
+  font-weight: 800;
+  line-height: 1.35;
+  margin: clamp(1.5rem, 4vw, 2.25rem) auto 0;
+  max-width: 36rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  justify-content: center;
+  margin-top: clamp(1.8rem, 4vw, 2.7rem);
+}
+
+.actions a {
+  background: var(--color-orange);
+  border: 3px solid var(--color-black);
+  color: var(--color-black);
+  font-family: var(--font-body);
+  font-size: clamp(1.12rem, 2vw, 1.55rem);
+  letter-spacing: 0.08em;
+  line-height: 1;
+  padding: 0.72rem 1rem;
+  text-transform: uppercase;
+}
+
+.actions a + a {
+  border-left: 0;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 5rem 1rem 7.5rem;
+  }
+
+  .actions {
+    display: grid;
+  }
+
+  .actions a + a {
+    border-left: 3px solid var(--color-black);
+    border-top: 0;
+  }
+}

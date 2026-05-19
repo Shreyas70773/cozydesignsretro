@@ -1,0 +1,235 @@
+.page {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  min-height: 100vh;
+  padding: 7.4rem clamp(1rem, 4vw, 5.5rem) 4rem;
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.2rem;
+}
+
+.navBar {
+  align-items: center;
+  background: var(--color-teal-dark);
+  border: 4px solid var(--color-teal-dark);
+  border-radius: 999px;
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: auto 1fr;
+  max-width: 34rem;
+  min-height: 3.25rem;
+  padding: 0.2rem 1.25rem 0.2rem 1rem;
+  width: min(100%, 34rem);
+}
+
+.navIcon {
+  display: block;
+  width: 3.1rem;
+}
+
+.navLogo {
+  display: block;
+  justify-self: center;
+  max-width: 14.5rem;
+  width: 100%;
+}
+
+.hero {
+  margin: 0 auto 1.7rem;
+  max-width: 88rem;
+  position: relative;
+  text-align: center;
+}
+
+.heroTitle,
+.heroShadow {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5.8vw, 5.9rem);
+  font-synthesis: none;
+  letter-spacing: -0.032em;
+  line-height: 0.84;
+  margin: 0;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.heroShadow {
+  color: #1e1e1e;
+  display: none;
+  left: 50%;
+  position: absolute;
+  top: 0.45rem;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+.heroTitle {
+  -webkit-text-stroke: 0.055em #050505;
+  color: var(--color-cream);
+  filter: drop-shadow(0.42rem 0.58rem 0 #050505);
+  paint-order: stroke fill;
+  position: relative;
+}
+
+.heroIntro {
+  color: #343434;
+  font-family: var(--font-copy);
+  font-size: clamp(0.98rem, 1.35vw, 1.16rem);
+  letter-spacing: 0;
+  line-height: 1.45;
+  margin: 1.45rem auto 0;
+  max-width: 47rem;
+}
+
+.grid {
+  align-items: stretch;
+  display: grid;
+  gap: clamp(1.1rem, 2.6vw, 3rem);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0 auto;
+  max-width: 88rem;
+}
+
+.card {
+  aspect-ratio: 4 / 5;
+  background: #17191f;
+  overflow: hidden;
+  position: relative;
+  scroll-margin-top: 8rem;
+  width: 100%;
+}
+
+.posterImage {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 260ms ease;
+  width: 100%;
+}
+
+.posterOverlay {
+  align-items: flex-start;
+  background: linear-gradient(180deg, rgba(14, 14, 14, 0.02), rgba(14, 14, 14, 0.86));
+  bottom: 0;
+  color: var(--color-cream);
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  left: 0;
+  min-height: 42%;
+  opacity: 0;
+  padding: clamp(0.85rem, 2vw, 1.25rem);
+  position: absolute;
+  right: 0;
+  transform: translateY(1rem);
+  transition:
+    opacity 200ms ease,
+    transform 200ms ease;
+}
+
+.card:hover .posterImage,
+.card:focus-within .posterImage {
+  transform: scale(1.045);
+}
+
+.card:hover .posterOverlay,
+.card:focus-within .posterOverlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.posterDescription {
+  display: -webkit-box;
+  font-family: var(--font-copy);
+  font-size: clamp(0.92rem, 1.5vw, 1.1rem);
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  line-height: 1.25;
+  margin-top: auto;
+  overflow: hidden;
+}
+
+.posterTitle {
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  font-family: var(--font-body);
+  font-size: clamp(1.15rem, 2.2vw, 1.75rem);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 0.95;
+  margin: 0;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+.posterLink {
+  background: var(--color-orange);
+  color: #111111;
+  display: inline-flex;
+  font-family: var(--font-body);
+  font-size: clamp(0.8rem, 1.35vw, 1rem);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  padding: 0.48rem 0.58rem;
+  text-transform: uppercase;
+  transition:
+    background 160ms ease,
+    transform 160ms ease;
+}
+
+.posterLink:hover,
+.posterLink:focus-visible {
+  background: var(--color-cream);
+  transform: translateY(-1px);
+}
+
+.instagram {
+  color: #6a6a6a;
+  display: block;
+  font-family: var(--font-body);
+  font-size: clamp(1.1rem, 2vw, 1.9rem);
+  letter-spacing: 0.12em;
+  margin: 2.5rem 0 0;
+  text-align: center;
+  text-transform: uppercase;
+  transition: color 180ms ease;
+}
+
+.instagram:hover,
+.instagram:focus-visible {
+  color: #17191f;
+}
+
+@media (max-width: 760px) {
+  .page {
+    padding-top: 1.65rem;
+    padding-bottom: 7rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .card {
+    scroll-margin-top: 2rem;
+  }
+
+  .posterOverlay {
+    min-height: 52%;
+    opacity: 1;
+    transform: none;
+  }
+
+  .heroTitle,
+  .heroShadow {
+    font-size: clamp(1.25rem, 6.2vw, 2.55rem);
+  }
+}

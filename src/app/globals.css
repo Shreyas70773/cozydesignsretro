@@ -1,0 +1,166 @@
+:root {
+  --color-aqua: #86bab8;
+  --color-black: #111111;
+  --color-charcoal: #1c1d21;
+  --color-cream: #fff8de;
+  --color-ink: #181818;
+  --color-orange: #ffa000;
+  --color-preloader-cream: #fff9dc;
+  --color-preloader-teal: #1c7873;
+  --color-slate: #666666;
+  --color-teal: #1e7974;
+  --color-teal-dark: #1b736f;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+html[data-preloader-active="true"],
+body[data-preloader-active="true"] {
+  overflow: hidden;
+}
+
+body {
+  background: var(--color-preloader-cream);
+  color: var(--color-ink);
+  font-family: var(--font-copy), sans-serif;
+  min-height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*::selection {
+  background: rgba(255, 160, 0, 0.28);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+.preloader {
+  --preloader-bg: var(--color-preloader-cream);
+
+  background: var(--preloader-bg);
+  height: 100dvh;
+  inset: 0;
+  overflow: hidden;
+  position: fixed;
+  transform: translateY(0);
+  transition: transform 1.05s cubic-bezier(0.2, 0.9, 0.22, 1);
+  width: 100vw;
+  will-change: transform;
+  z-index: 90;
+}
+
+.preloader[data-part-two-teal="true"] {
+  --preloader-bg: var(--color-preloader-teal);
+}
+
+.preloader--reveal {
+  pointer-events: none;
+  transform: translateY(-102%);
+}
+
+.preloader__media {
+  align-items: center;
+  background: var(--preloader-bg);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  position: absolute;
+}
+
+.preloader__video {
+  display: block;
+  height: 100dvh;
+  max-width: none;
+  object-fit: cover;
+  object-position: center center;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  transition: opacity 160ms ease;
+  width: 100vw;
+}
+
+.preloader__video.is-visible {
+  opacity: 1;
+}
+
+@media (max-width: 1024px), ((pointer: coarse) and (max-width: 1180px)) {
+  .preloader__video--part1 {
+    height: 100dvh;
+    object-position: center center;
+    width: 100vw;
+  }
+
+  .preloader__video--part2 {
+    display: none;
+  }
+}
+
+.preloader::after {
+  background: linear-gradient(180deg, rgba(255, 249, 220, 0.42), rgba(255, 249, 220, 0));
+  bottom: -1px;
+  content: "";
+  height: 24px;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  transition: opacity 160ms ease;
+}
+
+.preloader--reveal::after {
+  opacity: 1;
+}
+
+.preloader__debug {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 0.4rem;
+  color: #f5f5f5;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  font-size: 0.72rem;
+  left: 0.9rem;
+  letter-spacing: 0.02em;
+  margin: 0;
+  padding: 0.5rem 0.65rem;
+  position: absolute;
+  top: 0.9rem;
+  z-index: 3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preloader {
+    transition-duration: 1ms;
+  }
+}

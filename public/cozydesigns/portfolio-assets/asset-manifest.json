@@ -1,0 +1,1000 @@
+{
+  "generatedAt": "2026-05-10T23:43:23.206Z",
+  "assetCount": 42,
+  "occurrenceCount": 47,
+  "outputDirectory": "/cozydesigns/portfolio-assets",
+  "conversion": "webp-lossless",
+  "totalWebpBytes": 135410816,
+  "assets": [
+    {
+      "assetId": "05a793a7-4a3d-4c68-80ec-e6f5c8ba98dd",
+      "localPath": "/cozydesigns/portfolio-assets/05a793a7-retro-comic-poster.webp",
+      "width": 1120,
+      "height": 1600,
+      "webpBytes": 2382552,
+      "originalBytes": 560566,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/posters-page.tsx",
+          "label": "Retro comic poster"
+        }
+      ],
+      "originalWidth": 1120,
+      "originalHeight": 1600,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 4.2503,
+      "encodedWidth": 1120,
+      "encodedHeight": 1600
+    },
+    {
+      "assetId": "0700839a-872c-48b0-94bd-7c6a4aed39c1",
+      "localPath": "/cozydesigns/portfolio-assets/0700839a-rose-poster.webp",
+      "width": 1145,
+      "height": 1280,
+      "webpBytes": 2072736,
+      "originalBytes": 876776,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/posters-page.tsx",
+          "label": "Rose poster"
+        }
+      ],
+      "originalWidth": 1145,
+      "originalHeight": 1280,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 2.364,
+      "encodedWidth": 1145,
+      "encodedHeight": 1280
+    },
+    {
+      "assetId": "07561ae1-c465-4609-8c1d-6ae37efd9d46",
+      "localPath": "/cozydesigns/portfolio-assets/07561ae1-die-with-a-smile-artwork.webp",
+      "width": 3222,
+      "height": 4096,
+      "webpBytes": 17006506,
+      "originalBytes": 30380448,
+      "originalFormat": "png",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/home-page.tsx",
+          "label": "Die with a smile artwork"
+        }
+      ],
+      "originalWidth": 3222,
+      "originalHeight": 4096,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 0.5598,
+      "encodedWidth": 3222,
+      "encodedHeight": 4096
+    },
+    {
+      "assetId": "1a45338b-70a2-4dff-bc2d-0db1102e75b2",
+      "localPath": "/cozydesigns/portfolio-assets/1a45338b-hypnophobia-artwork.webp",
+      "width": 1200,
+      "height": 1400,
+      "webpBytes": 2919848,
+      "originalBytes": 981124,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/home-page.tsx",
+          "label": "Hypnophobia artwork"
+        }
+      ],
+      "originalWidth": 1200,
+      "originalHeight": 1400,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 2.976,
+      "encodedWidth": 1200,
+      "encodedHeight": 1400
+    },
+    {
+      "assetId": "2c6d903d-8b90-49c9-a62b-93809132c626",
+      "localPath": "/cozydesigns/portfolio-assets/2c6d903d-problem-artwork.webp",
+      "width": 980,
+      "height": 1280,
+      "webpBytes": 1758620,
+      "originalBytes": 348036,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/home-page.tsx",
+          "label": "Problem artwork"
+        },
+        {
+          "file": "src/components/posters-page.tsx",
+          "label": "Coming poster"
+        }
+      ],
+      "originalWidth": 980,
+      "originalHeight": 1280,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 5.053,
+      "encodedWidth": 980,
+      "encodedHeight": 1280
+    },
+    {
+      "assetId": "2ee98352-4414-4978-af02-dfb2a084891a",
+      "localPath": "/cozydesigns/portfolio-assets/2ee98352-mamma-said-artwork.webp",
+      "width": 1085,
+      "height": 1280,
+      "webpBytes": 1494710,
+      "originalBytes": 353049,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/home-page.tsx",
+          "label": "Mamma said artwork"
+        },
+        {
+          "file": "src/components/posters-page.tsx",
+          "label": "Lola poster"
+        }
+      ],
+      "originalWidth": 1085,
+      "originalHeight": 1280,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 4.2337,
+      "encodedWidth": 1085,
+      "encodedHeight": 1280
+    },
+    {
+      "assetId": "32f03200-e926-42a4-9ef6-cafae3b6b4a7",
+      "localPath": "/cozydesigns/portfolio-assets/32f03200-joker-poster.webp",
+      "width": 973,
+      "height": 1280,
+      "webpBytes": 1403634,
+      "originalBytes": 278205,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/posters-page.tsx",
+          "label": "Joker poster"
+        }
+      ],
+      "originalWidth": 973,
+      "originalHeight": 1280,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 5.0453,
+      "encodedWidth": 973,
+      "encodedHeight": 1280
+    },
+    {
+      "assetId": "35588c2a-e245-478a-9bfe-fc0017cf2d13",
+      "localPath": "/cozydesigns/portfolio-assets/35588c2a-hypnophobia-poster.webp",
+      "width": 1199,
+      "height": 1600,
+      "webpBytes": 2504154,
+      "originalBytes": 1250020,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/posters-page.tsx",
+          "label": "Hypnophobia poster"
+        }
+      ],
+      "originalWidth": 1199,
+      "originalHeight": 1600,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 2.0033,
+      "encodedWidth": 1199,
+      "encodedHeight": 1600
+    },
+    {
+      "assetId": "3a7bf456-a121-4b74-9e42-48c3b5b89fce",
+      "localPath": "/cozydesigns/portfolio-assets/3a7bf456-messiah-poster.webp",
+      "width": 819,
+      "height": 1024,
+      "webpBytes": 1210984,
+      "originalBytes": 1723685,
+      "originalFormat": "png",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/posters-page.tsx",
+          "label": "Messiah poster"
+        }
+      ],
+      "originalWidth": 819,
+      "originalHeight": 1024,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 0.7026,
+      "encodedWidth": 819,
+      "encodedHeight": 1024
+    },
+    {
+      "assetId": "3b2af6d5-c1bb-4c95-b110-2d225575fcbf",
+      "localPath": "/cozydesigns/portfolio-assets/3b2af6d5-sinners-poster-artwork.webp",
+      "width": 736,
+      "height": 995,
+      "webpBytes": 862600,
+      "originalBytes": 182750,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/home-page.tsx",
+          "label": "Sinners poster artwork"
+        }
+      ],
+      "originalWidth": 736,
+      "originalHeight": 995,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 4.7201,
+      "encodedWidth": 736,
+      "encodedHeight": 995
+    },
+    {
+      "assetId": "4027a17f-24c1-4884-8ad9-bac9de5c7562",
+      "localPath": "/cozydesigns/portfolio-assets/4027a17f-nyy-eyes-poster.webp",
+      "width": 3194,
+      "height": 4096,
+      "webpBytes": 17668280,
+      "originalBytes": 15946623,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/posters-page.tsx",
+          "label": "NYY Eyes poster"
+        }
+      ],
+      "originalWidth": 3194,
+      "originalHeight": 4096,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 1.108,
+      "encodedWidth": 3194,
+      "encodedHeight": 4096
+    },
+    {
+      "assetId": "4cb864e0-2f8b-4b8d-b52b-993656633c89",
+      "localPath": "/cozydesigns/portfolio-assets/4cb864e0-scaring-the-hoes-poster.webp",
+      "width": 903,
+      "height": 1280,
+      "webpBytes": 1776608,
+      "originalBytes": 321410,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/posters-page.tsx",
+          "label": "Scaring the Hoes poster"
+        }
+      ],
+      "originalWidth": 903,
+      "originalHeight": 1280,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 5.5275,
+      "encodedWidth": 903,
+      "encodedHeight": 1280
+    },
+    {
+      "assetId": "515326e1-2a55-40bc-9a40-f23b527144c8",
+      "localPath": "/cozydesigns/portfolio-assets/515326e1-dies-irae-poster.webp",
+      "width": 1029,
+      "height": 1280,
+      "webpBytes": 1789946,
+      "originalBytes": 318823,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/posters-page.tsx",
+          "label": "Dies Irae poster"
+        }
+      ],
+      "originalWidth": 1029,
+      "originalHeight": 1280,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 5.6142,
+      "encodedWidth": 1029,
+      "encodedHeight": 1280
+    },
+    {
+      "assetId": "60b74067-ec41-4358-90a4-25484cd262f8",
+      "localPath": "/cozydesigns/portfolio-assets/60b74067-the-age-of-aquarius-poster.webp",
+      "width": 1120,
+      "height": 1600,
+      "webpBytes": 2443792,
+      "originalBytes": 447114,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/home-page.tsx",
+          "label": "The age of Aquarius poster"
+        }
+      ],
+      "originalWidth": 1120,
+      "originalHeight": 1600,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 5.4657,
+      "encodedWidth": 1120,
+      "encodedHeight": 1600
+    },
+    {
+      "assetId": "61ab69fa-69d5-42a3-8eeb-5c015c520a8e",
+      "localPath": "/cozydesigns/portfolio-assets/61ab69fa-hell-on-earth-poster.webp",
+      "width": 1027,
+      "height": 1280,
+      "webpBytes": 1230672,
+      "originalBytes": 225405,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/posters-page.tsx",
+          "label": "Hell on Earth poster"
+        }
+      ],
+      "originalWidth": 1027,
+      "originalHeight": 1280,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 5.4598,
+      "encodedWidth": 1027,
+      "encodedHeight": 1280
+    },
+    {
+      "assetId": "688e4e3e-ce58-4c43-b65c-83dd603d9dc7",
+      "localPath": "/cozydesigns/portfolio-assets/688e4e3e-hunger-games-inspired-poster.webp",
+      "width": 736,
+      "height": 1039,
+      "webpBytes": 924642,
+      "originalBytes": 177983,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/home-page.tsx",
+          "label": "Hunger games inspired poster"
+        }
+      ],
+      "originalWidth": 736,
+      "originalHeight": 1039,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 5.1951,
+      "encodedWidth": 736,
+      "encodedHeight": 1039
+    },
+    {
+      "assetId": "70d5909b-d5ce-4473-b3f8-02918c040257",
+      "localPath": "/cozydesigns/portfolio-assets/70d5909b-no-feelings-poster.webp",
+      "width": 972,
+      "height": 1280,
+      "webpBytes": 1310990,
+      "originalBytes": 256060,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/posters-page.tsx",
+          "label": "No Feelings poster"
+        }
+      ],
+      "originalWidth": 972,
+      "originalHeight": 1280,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 5.1199,
+      "encodedWidth": 972,
+      "encodedHeight": 1280
+    },
+    {
+      "assetId": "71547230-5cfc-4eaa-b220-f7f54303bd59",
+      "localPath": "/cozydesigns/portfolio-assets/71547230-sinners-poster.webp",
+      "width": 1006,
+      "height": 1280,
+      "webpBytes": 1909306,
+      "originalBytes": 365873,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/posters-page.tsx",
+          "label": "Sinners poster"
+        }
+      ],
+      "originalWidth": 1006,
+      "originalHeight": 1280,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 5.2185,
+      "encodedWidth": 1006,
+      "encodedHeight": 1280
+    },
+    {
+      "assetId": "72abda80-7c58-4759-a435-6a5f510567a9",
+      "localPath": "/cozydesigns/portfolio-assets/72abda80-cozy-designs-nav-icon.webp",
+      "width": 480,
+      "height": 480,
+      "webpBytes": 222994,
+      "originalBytes": 262978,
+      "originalFormat": "gif",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/site-nav.tsx",
+          "label": "cozy-designs-nav-icon"
+        }
+      ],
+      "originalWidth": 480,
+      "originalHeight": 480,
+      "originalPages": 22,
+      "webpPages": 22,
+      "compressionRatio": 0.848,
+      "encodedWidth": 480,
+      "encodedHeight": 10560,
+      "originalEncodedHeight": 10560
+    },
+    {
+      "assetId": "7a570fbb-f818-4748-9587-f41918881d80",
+      "localPath": "/cozydesigns/portfolio-assets/7a570fbb-jay-z-artwork.webp",
+      "width": 964,
+      "height": 1280,
+      "webpBytes": 1576468,
+      "originalBytes": 261424,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/home-page.tsx",
+          "label": "Jay-Z artwork"
+        },
+        {
+          "file": "src/components/posters-page.tsx",
+          "label": "Juvenile Hell poster"
+        }
+      ],
+      "originalWidth": 964,
+      "originalHeight": 1280,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 6.0303,
+      "encodedWidth": 964,
+      "encodedHeight": 1280
+    },
+    {
+      "assetId": "8411f0cd-b000-41af-ae1a-7d7b34c236b7",
+      "localPath": "/cozydesigns/portfolio-assets/8411f0cd-clouded-branding-artwork.webp",
+      "width": 4051,
+      "height": 3089,
+      "webpBytes": 9893298,
+      "originalBytes": 19366195,
+      "originalFormat": "png",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/home-page.tsx",
+          "label": "Clouded branding artwork"
+        }
+      ],
+      "originalWidth": 4051,
+      "originalHeight": 3089,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 0.5109,
+      "encodedWidth": 4051,
+      "encodedHeight": 3089
+    },
+    {
+      "assetId": "8df4ebb8-2c1b-4f81-a28e-06291495696f",
+      "localPath": "/cozydesigns/portfolio-assets/8df4ebb8-illustrated-portrait-poster.webp",
+      "width": 1080,
+      "height": 1280,
+      "webpBytes": 1540192,
+      "originalBytes": 278349,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/posters-page.tsx",
+          "label": "Illustrated portrait poster"
+        }
+      ],
+      "originalWidth": 1080,
+      "originalHeight": 1280,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 5.5333,
+      "encodedWidth": 1080,
+      "encodedHeight": 1280
+    },
+    {
+      "assetId": "962011bd-f6ed-4e29-8a10-03dc5f5171c7",
+      "localPath": "/cozydesigns/portfolio-assets/962011bd-jackman-comic-poster.webp",
+      "width": 736,
+      "height": 1018,
+      "webpBytes": 749818,
+      "originalBytes": 172450,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/home-page.tsx",
+          "label": "Jackman comic poster"
+        }
+      ],
+      "originalWidth": 736,
+      "originalHeight": 1018,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 4.348,
+      "encodedWidth": 736,
+      "encodedHeight": 1018
+    },
+    {
+      "assetId": "96ac9517-7e4f-4ee4-b388-8567c3ccc275",
+      "localPath": "/cozydesigns/portfolio-assets/96ac9517-retro-comic-poster-project-artwork.webp",
+      "width": 1600,
+      "height": 1200,
+      "webpBytes": 1808648,
+      "originalBytes": 304315,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/home-page.tsx",
+          "label": "Retro comic poster project artwork"
+        }
+      ],
+      "originalWidth": 1600,
+      "originalHeight": 1200,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 5.9433,
+      "encodedWidth": 1600,
+      "encodedHeight": 1200
+    },
+    {
+      "assetId": "982062e4-3cc5-458e-94d2-73dda182b684",
+      "localPath": "/cozydesigns/portfolio-assets/982062e4-hurry-up-tomorrow-poster.webp",
+      "width": 1054,
+      "height": 1280,
+      "webpBytes": 1481322,
+      "originalBytes": 273309,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/posters-page.tsx",
+          "label": "Hurry Up Tomorrow poster"
+        }
+      ],
+      "originalWidth": 1054,
+      "originalHeight": 1280,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 5.42,
+      "encodedWidth": 1054,
+      "encodedHeight": 1280
+    },
+    {
+      "assetId": "99b411e8-07dd-4ee0-a3de-8a73b938155b",
+      "localPath": "/cozydesigns/portfolio-assets/99b411e8-animation-and-motion-poster-artwork.webp",
+      "width": 4096,
+      "height": 2463,
+      "webpBytes": 872394,
+      "originalBytes": 2139607,
+      "originalFormat": "png",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/home-page.tsx",
+          "label": "Animation and motion poster artwork"
+        }
+      ],
+      "originalWidth": 4096,
+      "originalHeight": 2463,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 0.4077,
+      "encodedWidth": 4096,
+      "encodedHeight": 2463
+    },
+    {
+      "assetId": "a4c92f9b-6b3e-4fd0-83ee-2244a95fbabe",
+      "localPath": "/cozydesigns/portfolio-assets/a4c92f9b-gnx-poster.webp",
+      "width": 3087,
+      "height": 4090,
+      "webpBytes": 15034070,
+      "originalBytes": 4651936,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/posters-page.tsx",
+          "label": "GNX poster"
+        }
+      ],
+      "originalWidth": 3087,
+      "originalHeight": 4090,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 3.2318,
+      "encodedWidth": 3087,
+      "encodedHeight": 4090
+    },
+    {
+      "assetId": "a61748ff-1eb0-45b4-a7dd-54977ec42fda",
+      "localPath": "/cozydesigns/portfolio-assets/a61748ff-d-angelo-artwork.webp",
+      "width": 1090,
+      "height": 1280,
+      "webpBytes": 1605054,
+      "originalBytes": 277252,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/home-page.tsx",
+          "label": "D'Angelo artwork"
+        },
+        {
+          "file": "src/components/posters-page.tsx",
+          "label": "D'Angelo poster"
+        }
+      ],
+      "originalWidth": 1090,
+      "originalHeight": 1280,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 5.7892,
+      "encodedWidth": 1090,
+      "encodedHeight": 1280
+    },
+    {
+      "assetId": "a8a1ef54-ce12-4f73-9593-2c9e29b44a35",
+      "localPath": "/cozydesigns/portfolio-assets/a8a1ef54-the-world-is-yours-poster.webp",
+      "width": 903,
+      "height": 1280,
+      "webpBytes": 1776608,
+      "originalBytes": 321410,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/home-page.tsx",
+          "label": "The world is yours poster"
+        }
+      ],
+      "originalWidth": 903,
+      "originalHeight": 1280,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 5.5275,
+      "encodedWidth": 903,
+      "encodedHeight": 1280
+    },
+    {
+      "assetId": "b09b2cca-6368-48f1-a5bc-758baf330864",
+      "localPath": "/cozydesigns/portfolio-assets/b09b2cca-jackboys-ii-poster.webp",
+      "width": 1026,
+      "height": 1280,
+      "webpBytes": 1616616,
+      "originalBytes": 276610,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/posters-page.tsx",
+          "label": "Jackboys II poster"
+        }
+      ],
+      "originalWidth": 1026,
+      "originalHeight": 1280,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 5.8444,
+      "encodedWidth": 1026,
+      "encodedHeight": 1280
+    },
+    {
+      "assetId": "b5b88675-f358-4173-965c-a34026d38271",
+      "localPath": "/cozydesigns/portfolio-assets/b5b88675-coon-poster.webp",
+      "width": 1200,
+      "height": 1500,
+      "webpBytes": 2607672,
+      "originalBytes": 807488,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/posters-page.tsx",
+          "label": "Coon poster"
+        }
+      ],
+      "originalWidth": 1200,
+      "originalHeight": 1500,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 3.2294,
+      "encodedWidth": 1200,
+      "encodedHeight": 1500
+    },
+    {
+      "assetId": "b61e1e21-17d0-4273-9905-59cb01c6bba7",
+      "localPath": "/cozydesigns/portfolio-assets/b61e1e21-harlem-finest-poster.webp",
+      "width": 960,
+      "height": 1280,
+      "webpBytes": 1341600,
+      "originalBytes": 280349,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/posters-page.tsx",
+          "label": "Harlem Finest poster"
+        }
+      ],
+      "originalWidth": 960,
+      "originalHeight": 1280,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 4.7855,
+      "encodedWidth": 960,
+      "encodedHeight": 1280
+    },
+    {
+      "assetId": "b970b43c-774c-4b1b-a693-d70c9f4259c5",
+      "localPath": "/cozydesigns/portfolio-assets/b970b43c-ny-state-of-mind-poster.webp",
+      "width": 1024,
+      "height": 1280,
+      "webpBytes": 1616292,
+      "originalBytes": 294964,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/posters-page.tsx",
+          "label": "NY State of Mind poster"
+        }
+      ],
+      "originalWidth": 1024,
+      "originalHeight": 1280,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 5.4796,
+      "encodedWidth": 1024,
+      "encodedHeight": 1280
+    },
+    {
+      "assetId": "d9a09b24-e853-4b74-b154-41d1789cb6af",
+      "localPath": "/cozydesigns/portfolio-assets/d9a09b24-gnx-illustrated-album-art.webp",
+      "width": 736,
+      "height": 1115,
+      "webpBytes": 615974,
+      "originalBytes": 123798,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/home-page.tsx",
+          "label": "GNX illustrated album art"
+        }
+      ],
+      "originalWidth": 736,
+      "originalHeight": 1115,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 4.9756,
+      "encodedWidth": 736,
+      "encodedHeight": 1115
+    },
+    {
+      "assetId": "da0f8c6b-a10b-4082-b251-7193e9793489",
+      "localPath": "/cozydesigns/portfolio-assets/da0f8c6b-the-glass-poster.webp",
+      "width": 1200,
+      "height": 1441,
+      "webpBytes": 2558624,
+      "originalBytes": 955340,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/posters-page.tsx",
+          "label": "The Glass poster"
+        }
+      ],
+      "originalWidth": 1200,
+      "originalHeight": 1441,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 2.6782,
+      "encodedWidth": 1200,
+      "encodedHeight": 1441
+    },
+    {
+      "assetId": "dd276a8e-0731-4b9b-ab2c-d813023ce304",
+      "localPath": "/cozydesigns/portfolio-assets/dd276a8e-the-world-is-yours-poster.webp",
+      "width": 736,
+      "height": 995,
+      "webpBytes": 862600,
+      "originalBytes": 182750,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/posters-page.tsx",
+          "label": "The World Is Yours poster"
+        }
+      ],
+      "originalWidth": 736,
+      "originalHeight": 995,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 4.7201,
+      "encodedWidth": 736,
+      "encodedHeight": 995
+    },
+    {
+      "assetId": "e88b4545-6341-4ec3-a185-3a30e7faf87f",
+      "localPath": "/cozydesigns/portfolio-assets/e88b4545-raekwon-poster.webp",
+      "width": 1316,
+      "height": 1593,
+      "webpBytes": 2589078,
+      "originalBytes": 662578,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/posters-page.tsx",
+          "label": "Raekwon poster"
+        }
+      ],
+      "originalWidth": 1316,
+      "originalHeight": 1593,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 3.9076,
+      "encodedWidth": 1316,
+      "encodedHeight": 1593
+    },
+    {
+      "assetId": "e8e8aa22-d1d9-4fda-8ca8-302ac7505bf4",
+      "localPath": "/cozydesigns/portfolio-assets/e8e8aa22-die-with-a-smile-poster.webp",
+      "width": 1200,
+      "height": 1400,
+      "webpBytes": 2919848,
+      "originalBytes": 981124,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/posters-page.tsx",
+          "label": "Die with a Smile poster"
+        }
+      ],
+      "originalWidth": 1200,
+      "originalHeight": 1400,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 2.976,
+      "encodedWidth": 1200,
+      "encodedHeight": 1400
+    },
+    {
+      "assetId": "ee651262-bed5-41a4-bdbe-11dc4bf6e2fe",
+      "localPath": "/cozydesigns/portfolio-assets/ee651262-trin-album-cover-artwork.webp",
+      "width": 3694,
+      "height": 2392,
+      "webpBytes": 5583006,
+      "originalBytes": 1989072,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/home-page.tsx",
+          "label": "TRIN album cover artwork"
+        }
+      ],
+      "originalWidth": 3694,
+      "originalHeight": 2392,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 2.8068,
+      "encodedWidth": 3694,
+      "encodedHeight": 2392
+    },
+    {
+      "assetId": "f47cc9ac-1da3-4d2b-8813-8fbd9138d01c",
+      "localPath": "/cozydesigns/portfolio-assets/f47cc9ac-spring-has-no-rules-poster.webp",
+      "width": 1120,
+      "height": 1600,
+      "webpBytes": 2382552,
+      "originalBytes": 560566,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/home-page.tsx",
+          "label": "Spring has no rules poster"
+        }
+      ],
+      "originalWidth": 1120,
+      "originalHeight": 1600,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 4.2503,
+      "encodedWidth": 1120,
+      "encodedHeight": 1600
+    },
+    {
+      "assetId": "f90ecbd9-6352-465e-a348-45e78f19b654",
+      "localPath": "/cozydesigns/portfolio-assets/f90ecbd9-the-infamous-artwork.webp",
+      "width": 2185,
+      "height": 3160,
+      "webpBytes": 8981354,
+      "originalBytes": 1476018,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/home-page.tsx",
+          "label": "The Infamous artwork"
+        },
+        {
+          "file": "src/components/posters-page.tsx",
+          "label": "Infamous poster"
+        }
+      ],
+      "originalWidth": 2185,
+      "originalHeight": 3160,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 6.0849,
+      "encodedWidth": 2185,
+      "encodedHeight": 3160
+    },
+    {
+      "assetId": "fc591770-d79d-4457-ae80-d0fe649743a4",
+      "localPath": "/cozydesigns/portfolio-assets/fc591770-baby-keem-artwork.webp",
+      "width": 1199,
+      "height": 1600,
+      "webpBytes": 2504154,
+      "originalBytes": 1250020,
+      "originalFormat": "jpeg",
+      "conversion": "webp-lossless",
+      "usages": [
+        {
+          "file": "src/components/home-page.tsx",
+          "label": "Baby Keem artwork"
+        }
+      ],
+      "originalWidth": 1199,
+      "originalHeight": 1600,
+      "originalPages": 1,
+      "webpPages": 1,
+      "compressionRatio": 2.0033,
+      "encodedWidth": 1199,
+      "encodedHeight": 1600
+    }
+  ],
+  "totalOriginalBytes": 93143852,
+  "totalCompressionRatio": 1.4538,
+  "animatedAssetsReconverted": 1
+}

@@ -1,0 +1,229 @@
+.page {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  min-height: 100vh;
+  padding: 8rem clamp(1rem, 4vw, 5rem) 4rem;
+}
+
+.hero {
+  margin: 0 auto clamp(2rem, 4vw, 4rem);
+  max-width: 88rem;
+}
+
+.kicker {
+  color: var(--color-teal);
+  font-family: var(--font-body);
+  font-size: clamp(1.2rem, 2vw, 1.9rem);
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.title {
+  -webkit-text-stroke: 0.055em #050505;
+  color: #a6c2c1;
+  filter: drop-shadow(0.42rem 0.58rem 0 #050505);
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 8.2vw, 7.6rem);
+  font-synthesis: none;
+  letter-spacing: -0.045em;
+  line-height: 0.84;
+  margin: 0;
+  paint-order: stroke fill;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.feed {
+  column-count: 3;
+  column-gap: clamp(1.1rem, 2vw, 2rem);
+  margin: 0 auto;
+  max-width: 88rem;
+}
+
+.card {
+  background: #f7efd0;
+  border: 3px solid #111111;
+  box-shadow: 0.42rem 0.42rem 0 #111111;
+  break-inside: avoid;
+  display: inline-block;
+  margin: 0 0 clamp(1.1rem, 2vw, 2rem);
+  overflow: hidden;
+  width: 100%;
+}
+
+.mediaLink,
+.mediaFrame {
+  background: #151515;
+  display: block;
+}
+
+.media {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+video.media {
+  background: #151515;
+}
+
+.cardBody {
+  padding: clamp(0.95rem, 2vw, 1.25rem);
+}
+
+.date {
+  color: var(--color-teal);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.postTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: 0;
+  line-height: 0.86;
+  margin-top: 0.35rem;
+  text-transform: uppercase;
+}
+
+.description {
+  color: #383838;
+  font-family: var(--font-copy);
+  font-size: 1rem;
+  line-height: 1.45;
+  margin-top: 0.75rem;
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.socials a {
+  background: var(--color-teal-dark);
+  color: var(--color-cream);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1;
+  padding: 0.5rem 0.62rem;
+  text-transform: uppercase;
+  transition:
+    background 160ms ease,
+    transform 160ms ease;
+}
+
+.socials a:hover,
+.socials a:focus-visible {
+  background: var(--color-orange);
+  color: #111111;
+  transform: translateY(-1px);
+}
+
+.empty {
+  background: #f7efd0;
+  border: 3px solid #111111;
+  box-shadow: 0.42rem 0.42rem 0 #111111;
+  margin: 0 auto;
+  max-width: 42rem;
+  padding: clamp(1.25rem, 4vw, 2rem);
+  text-align: center;
+}
+
+.empty h2 {
+  -webkit-text-stroke: 0.055em #050505;
+  color: #a6c2c1;
+  filter: drop-shadow(0.24rem 0.32rem 0 #050505);
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  font-synthesis: none;
+  letter-spacing: -0.045em;
+  line-height: 0.86;
+  paint-order: stroke fill;
+  text-transform: uppercase;
+}
+
+.empty p {
+  color: #383838;
+  font-family: var(--font-copy);
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin-top: 0.8rem;
+}
+
+.detail {
+  display: grid;
+  gap: clamp(1.4rem, 3vw, 2.4rem);
+  grid-template-columns: minmax(0, 1.1fr) minmax(18rem, 0.9fr);
+  margin: 0 auto;
+  max-width: 88rem;
+}
+
+.detailMedia {
+  align-self: start;
+  background: #151515;
+  border: 3px solid #111111;
+  box-shadow: 0.42rem 0.42rem 0 #111111;
+}
+
+.detailPanel {
+  align-self: start;
+  background: #f7efd0;
+  border: 3px solid #111111;
+  box-shadow: 0.42rem 0.42rem 0 #111111;
+  padding: clamp(1.2rem, 3vw, 2rem);
+}
+
+.detailPanel .title {
+  font-size: clamp(2.45rem, 4.6vw, 4rem);
+  margin-top: 0.45rem;
+}
+
+.backLink {
+  color: var(--color-teal);
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+@media (max-width: 960px) {
+  .feed {
+    column-count: 2;
+  }
+
+  .detail {
+    grid-template-columns: 1fr;
+    max-width: 42rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .page {
+    padding-top: 2rem;
+    padding-bottom: 7rem;
+  }
+
+  .title {
+    font-size: clamp(2.45rem, 12vw, 3.6rem);
+    filter: drop-shadow(0.25rem 0.34rem 0 #050505);
+    letter-spacing: 0.01em;
+    line-height: 0.94;
+  }
+
+  .postTitle {
+    font-size: clamp(1.8rem, 9vw, 2.45rem);
+    letter-spacing: 0.012em;
+    line-height: 0.94;
+  }
+
+  .feed {
+    column-count: 1;
+    max-width: 28rem;
+  }
+}
