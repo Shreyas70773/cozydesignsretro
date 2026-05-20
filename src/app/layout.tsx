@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import localFont from "next/font/local";
 
 import { RoutePreloader } from "@/components/route-preloader";
@@ -6,6 +7,8 @@ import { defaultOgImage, siteConfig } from "@/lib/seo";
 import "./globals.css";
 
 const PRELOADER_ASSET_VERSION = "20260519-fit-a";
+const googleAnalyticsId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID ?? "G-TPKPM53NVD";
+const googleSiteVerification = process.env.GOOGLE_SITE_VERIFICATION;
 const preloaderVideoSources = [
   {
     href: `/preloader/preloader-phone-bg-fff9dc.mp4?v=${PRELOADER_ASSET_VERSION}`,
@@ -109,6 +112,13 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     images: [defaultOgImage.url],
   },
+  ...(googleSiteVerification
+    ? {
+        verification: {
+          google: googleSiteVerification,
+        },
+      }
+    : {}),
 };
 
 export const viewport: Viewport = {
@@ -144,6 +154,7 @@ export default function RootLayout({
       <body>
         <RoutePreloader>{children}</RoutePreloader>
       </body>
+      {googleAnalyticsId ? <GoogleAnalytics gaId={googleAnalyticsId} /> : null}
     </html>
   );
 }
