@@ -263,6 +263,7 @@
   margin: 0 auto 1.7rem;
   max-width: 86rem;
   paint-order: stroke fill;
+  padding-block: 0.16em 0.12em;
   text-transform: uppercase;
   white-space: nowrap;
 }

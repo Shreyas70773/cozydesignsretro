@@ -35,6 +35,7 @@
   margin: 0;
   max-width: min(100%, 8.8ch);
   paint-order: stroke fill;
+  padding-block: 0.16em 0.12em;
   position: relative;
   text-transform: uppercase;
   z-index: 1;
@@ -83,6 +84,7 @@
   letter-spacing: -0.04em;
   line-height: 0.84;
   margin: 0;
+  padding-block: 0.16em 0.12em;
 }
 
 .practiceText {

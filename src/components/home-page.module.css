@@ -289,7 +289,7 @@
   -webkit-text-stroke: 0.055em #050505;
   color: #a6c2c1;
   -webkit-text-fill-color: #a6c2c1;
-  filter: none;
+  filter: drop-shadow(0.42rem 0.58rem 0 #050505);
   font-family: var(--font-display);
   font-size: clamp(3rem, 5.25vw, 6.75rem);
   font-synthesis: none;
@@ -297,8 +297,8 @@
   line-height: 0.84;
   margin: 0;
   paint-order: stroke fill;
+  padding-block: 0.16em 0.12em;
   position: relative;
-  text-shadow: 0.42rem 0.58rem 0 #050505;
   text-transform: uppercase;
   z-index: 1;
 }
@@ -469,13 +469,14 @@
   letter-spacing: -0.035em;
   line-height: 0.84;
   margin: 0;
+  padding-block: 0.16em 0.12em;
   text-transform: uppercase;
 }
 
 .statementShadow {
   color: #020100;
   -webkit-text-fill-color: #020100;
-  display: flex;
+  display: none;
   left: 50%;
   pointer-events: none;
   position: absolute;
@@ -486,10 +487,9 @@
 
 .statementTitle {
   -webkit-text-stroke: 0.055em #050505;
-  filter: none;
+  filter: drop-shadow(0.42rem 0.58rem 0 #050505);
   paint-order: stroke fill;
   position: relative;
-  text-shadow: 0.42rem 0.58rem 0 #050505;
   z-index: 1;
 }
 
@@ -609,14 +609,15 @@
   letter-spacing: -0.032em;
   line-height: 0.84;
   margin: 0;
+  padding-block: 0.16em 0.12em;
   text-transform: uppercase;
 }
 
 .projectsShadow {
   color: var(--color-ink);
-  display: block;
+  display: none;
   left: 0.2rem;
-  opacity: 1;
+  opacity: 0.26;
   position: absolute;
   top: 0.32rem;
   z-index: 0;
@@ -626,10 +627,9 @@
   -webkit-text-stroke: 0.055em #050505;
   color: var(--color-orange);
   -webkit-text-fill-color: var(--color-orange);
-  filter: none;
+  filter: drop-shadow(0.36rem 0.5rem 0 #050505);
   paint-order: stroke fill;
   position: relative;
-  text-shadow: 0.36rem 0.5rem 0 #050505;
   z-index: 1;
 }
 
@@ -720,7 +720,7 @@
   -webkit-text-stroke: 0.055em #fff8de;
   color: #17191f;
   -webkit-text-fill-color: #17191f;
-  filter: none;
+  filter: drop-shadow(0.28rem 0.34rem 0 #fff8de);
   font-family: var(--font-display);
   font-size: clamp(4.2rem, 7.4vw, 7.25rem);
   font-synthesis: none;
@@ -728,8 +728,8 @@
   line-height: 0.72;
   margin: 0 0 -0.85rem;
   paint-order: stroke fill;
+  padding-block: 0.18em 0.12em;
   position: relative;
-  text-shadow: 0.28rem 0.34rem 0 #fff8de;
   text-transform: uppercase;
   z-index: 2;
 }
@@ -871,6 +871,7 @@
   letter-spacing: -0.032em;
   line-height: 0.84;
   margin: 0;
+  padding-block: 0.16em 0.12em;
   text-transform: uppercase;
 }
 
@@ -932,6 +933,7 @@
   line-height: 0.76;
   margin: 0;
   max-width: 100%;
+  padding-block: 0.18em 0.12em;
   paint-order: stroke fill;
   text-transform: uppercase;
 }
@@ -1124,8 +1126,7 @@
   }
 
   .statementTitle {
-    filter: none;
-    text-shadow: 0.3rem 0.42rem 0 #050505;
+    filter: drop-shadow(0.3rem 0.42rem 0 #050505);
   }
 
   .storyParagraph span:nth-last-child(-n + 3) {
@@ -1322,8 +1323,7 @@
   }
 
   .statementTitle {
-    filter: none;
-    text-shadow: 0.22rem 0.3rem 0 #050505;
+    filter: drop-shadow(0.22rem 0.3rem 0 #050505);
   }
 
   .statementCard {

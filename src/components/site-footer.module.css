@@ -43,6 +43,7 @@
   line-height: 0.84;
   margin: 0;
   paint-order: stroke fill;
+  padding-block: 0.16em 0.12em;
   position: relative;
   text-transform: uppercase;
   z-index: 1;
@@ -98,6 +99,7 @@
   line-height: 0.76;
   margin: 0;
   max-width: 100%;
+  padding-block: 0.18em 0.12em;
   paint-order: stroke fill;
   text-transform: uppercase;
 }

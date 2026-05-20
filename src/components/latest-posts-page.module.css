@@ -29,6 +29,7 @@
   line-height: 0.84;
   margin: 0;
   paint-order: stroke fill;
+  padding-block: 0.16em 0.12em;
   position: relative;
   text-transform: uppercase;
 }
@@ -85,6 +86,7 @@ video.media {
   letter-spacing: 0;
   line-height: 0.86;
   margin-top: 0.35rem;
+  padding-block: 0.14em 0.1em;
   text-transform: uppercase;
 }
 
@@ -143,6 +145,7 @@ video.media {
   letter-spacing: -0.045em;
   line-height: 0.86;
   paint-order: stroke fill;
+  padding-block: 0.16em 0.12em;
   text-transform: uppercase;
 }
 
