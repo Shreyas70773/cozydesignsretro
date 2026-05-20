@@ -89,9 +89,9 @@ export default function Page() {
               className={styles.portrait}
               decoding="async"
               fetchPriority="high"
-              height={1600}
+              height={1616}
               src="/cozydesigns/about-us-picture-final.jpeg"
-              width={722}
+              width={1080}
             />
           </figure>
         </section>

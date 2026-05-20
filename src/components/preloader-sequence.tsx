@@ -38,7 +38,7 @@ const STAGE_ORDER: Record<Stage, number> = {
 };
 
 function preloadVideo(src: string): Promise<void> {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     const video = document.createElement("video");
 
     const settle = () => {
@@ -52,7 +52,7 @@ function preloadVideo(src: string): Promise<void> {
     };
     const handleError = () => {
       settle();
-      reject(new Error(`Failed to load ${src}`));
+      resolve();
     };
 
     video.muted = true;
@@ -199,12 +199,14 @@ export function PreloaderSequence({ onComplete }: PreloaderSequenceProps) {
       playPromise.catch((error) => {
         if (
           error instanceof DOMException &&
-          (error.name === "AbortError" || error.message.includes("paused to save power"))
+          (error.name === "AbortError" ||
+            error.name === "NotSupportedError" ||
+            error.message.includes("paused to save power"))
         ) {
           return;
         }
 
-        console.error("Preloader video playback failed:", error);
+        console.warn("Preloader video playback skipped:", error);
       });
     }
   }, []);
@@ -340,8 +342,7 @@ export function PreloaderSequence({ onComplete }: PreloaderSequenceProps) {
           setLoadState("ready");
         }
       })
-      .catch((error) => {
-        console.error("Preloader videos failed to load:", error);
+      .catch(() => {
         if (isActive) {
           setLoadState("failed");
           advanceStage("reveal");

@@ -21,6 +21,7 @@
 .title {
   -webkit-text-stroke: 0.055em #050505;
   color: #a6c2c1;
+  -webkit-text-fill-color: #a6c2c1;
   filter: drop-shadow(0.42rem 0.58rem 0 #050505);
   font-family: var(--font-display);
   font-size: clamp(3.2rem, 8.2vw, 7.6rem);
@@ -28,6 +29,8 @@
   letter-spacing: -0.045em;
   line-height: 0.84;
   margin: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
   paint-order: stroke fill;
   padding-block: 0.16em 0.12em;
   position: relative;
@@ -69,6 +72,7 @@ video.media {
 }
 
 .cardBody {
+  min-width: 0;
   padding: clamp(0.95rem, 2vw, 1.25rem);
 }
 
@@ -81,13 +85,26 @@ video.media {
 }
 
 .postTitle {
+  -webkit-text-stroke: 0.055em #050505;
+  color: #a6c2c1;
+  -webkit-text-fill-color: #a6c2c1;
+  filter: drop-shadow(0.2rem 0.28rem 0 #050505);
   font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3rem);
-  letter-spacing: 0;
+  font-synthesis: none;
+  letter-spacing: -0.045em;
   line-height: 0.86;
   margin-top: 0.35rem;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  paint-order: stroke fill;
   padding-block: 0.14em 0.1em;
   text-transform: uppercase;
+}
+
+.postTitle a {
+  -webkit-text-fill-color: inherit;
+  display: inline;
 }
 
 .description {
@@ -96,6 +113,9 @@ video.media {
   font-size: 1rem;
   line-height: 1.45;
   margin-top: 0.75rem;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .socials {
@@ -170,6 +190,7 @@ video.media {
   background: #151515;
   border: 3px solid #111111;
   box-shadow: 0.42rem 0.42rem 0 #111111;
+  min-width: 0;
 }
 
 .detailPanel {
@@ -177,6 +198,7 @@ video.media {
   background: #f7efd0;
   border: 3px solid #111111;
   box-shadow: 0.42rem 0.42rem 0 #111111;
+  min-width: 0;
   padding: clamp(1.2rem, 3vw, 2rem);
 }
 
@@ -235,7 +257,8 @@ video.media {
 
   .postTitle {
     font-size: clamp(1.8rem, 9vw, 2.45rem);
-    letter-spacing: 0.012em;
+    filter: drop-shadow(0.16rem 0.22rem 0 #050505);
+    letter-spacing: -0.025em;
     line-height: 0.94;
   }
 

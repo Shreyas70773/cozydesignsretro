@@ -360,7 +360,7 @@ export function CloudedPage() {
             alt="ZIV comic font specimen"
             h={494}
             img={{ h: 149.01, left: -0.04, top: 0, w: 100.08 }}
-            left={244}
+            left={306}
             name="font-ziv-comic.png"
             top={7564}
             w={1308}
@@ -369,15 +369,15 @@ export function CloudedPage() {
             alt="ZIV comic font lowercase specimen"
             h={224}
             img={{ h: 328.17, left: -2.43, top: -218.03, w: 109.15 }}
-            left={327}
+            left={361}
             name="font-ziv-comic.png"
             top={8048}
             w={1199}
           />
-          <TextLayer align="center" h={128} left={518} size={128} tag="h3" top={7467} w={759}>
+          <TextLayer align="center" h={128} left={581} size={128} tag="h3" top={7467} w={759}>
             ZIV Comic font
           </TextLayer>
-          <TextLayer align="center" h={88} left={288} size={44} top={8318} w={1238}>
+          <TextLayer align="center" h={88} left={341} size={44} top={8318} w={1238}>
             Display typeface: Used for all headline copy across the event series. Hand-constructed 3D
             comic bold with outlined shadow.
           </TextLayer>
@@ -388,7 +388,7 @@ export function CloudedPage() {
             alt="Artist name lettering"
             h={412}
             img={{ h: 155.6, left: -0.05, top: 0, w: 100.11 }}
-            left={244}
+            left={315}
             name="img-4072.png"
             top={8680}
             w={1291}
@@ -397,12 +397,12 @@ export function CloudedPage() {
             alt="Artist name lettering detail"
             h={229}
             img={{ h: 278.79, left: -0.03, top: -178.94, w: 116.09 }}
-            left={372}
+            left={405}
             name="img-4072.png"
             top={9092}
             w={1110}
           />
-          <TextLayer align="center" h={88} left={307} size={44} top={9335} w={1163}>
+          <TextLayer align="center" h={88} left={379} size={44} top={9335} w={1163}>
             Derived from the logo letterforms. Used for artist name treatments and secondary display
             text.
           </TextLayer>

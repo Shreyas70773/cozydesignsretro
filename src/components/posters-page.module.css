@@ -2,7 +2,7 @@
   background: var(--color-cream);
   color: var(--color-ink);
   min-height: 100vh;
-  padding: 7.4rem clamp(1rem, 4vw, 5.5rem) 4rem;
+  padding: 8.9rem clamp(1rem, 4vw, 5.5rem) 4rem;
 }
 
 .header {
