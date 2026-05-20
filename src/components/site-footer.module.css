@@ -15,6 +15,7 @@
 
 .footerColumn,
 .footerColumnRight {
+  align-self: start;
   position: relative;
 }
 
@@ -25,7 +26,7 @@
 .footerColumnRight {
   justify-self: end;
   min-width: clamp(15rem, 18vw, 18.5rem);
-  transform: translate(clamp(1.7rem, 3.6vw, 3.25rem), clamp(-3rem, -3.2vw, -2.05rem));
+  transform: translateX(clamp(1.7rem, 3.6vw, 3.25rem));
 }
 
 .footerColumnRight .footerLabel {
