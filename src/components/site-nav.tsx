@@ -10,9 +10,9 @@ const menuItems = [
   { href: "/posters", label: "Posters" },
   { href: "/animations", label: "Animations" },
   { href: "/latest-posts", label: "Latest Posts" },
-  { href: "/about", label: "About" },
   { href: "/clouded", label: "Clouded" },
   { href: "/album-covers", label: "Album Covers" },
+  { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -63,6 +63,7 @@ export function SiteNav({ mobilePlacement = "bottom" }: SiteNavProps) {
             width={480}
           />
         </Link>
+        <Link aria-label="Cozy Designs logo home" className={styles.navLogoLink} href="/">
           <Image
             alt="Cozy Designs"
             className={styles.navLogo}
@@ -70,6 +71,7 @@ export function SiteNav({ mobilePlacement = "bottom" }: SiteNavProps) {
             src="/cozydesigns/navbar-text.webp"
             width={2400}
           />
+        </Link>
         <button
           aria-controls="site-menu"
           aria-expanded={isMenuOpen}

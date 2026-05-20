@@ -318,7 +318,7 @@
 
 .heroDescription {
   color: var(--color-cream);
-  font-family: var(--font-copy);
+  font-family: var(--font-body);
   font-size: clamp(1rem, 1.8vw, 1.35rem);
   letter-spacing: 0.01em;
   line-height: 1.5;
@@ -390,19 +390,41 @@
   background: var(--color-black);
   border-top: 3px solid var(--color-black);
   border-bottom: 3px solid var(--color-black);
+  cursor: grab;
   overflow: hidden;
   padding: 1.15rem 0;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.carouselViewport:active {
+  cursor: grabbing;
+}
+
+.carouselDragSurface {
+  transform: translateX(var(--carousel-drag-offset, 0px));
+  width: max-content;
+  will-change: transform;
 }
 
 .carouselTrack {
-  align-items: center;
   animation: poster-marquee 30s linear infinite;
   display: flex;
-  gap: 1.1rem;
   width: max-content;
 }
 
+.carouselSet {
+  align-items: center;
+  display: flex;
+  gap: 1.1rem;
+  padding-right: 1.1rem;
+}
+
 .carouselTrackPaused {
+  animation-play-state: paused;
+}
+
+.carouselViewport:hover .carouselTrack {
   animation-play-state: paused;
 }
 
@@ -413,6 +435,7 @@
 }
 
 .carouselImage {
+  -webkit-user-drag: none;
   display: block;
   height: clamp(16rem, 31vw, 30rem);
   object-fit: cover;
@@ -985,11 +1008,11 @@
 
 @keyframes poster-marquee {
   from {
-    transform: translateX(0);
+    transform: translateX(-33.333333%);
   }
 
   to {
-    transform: translateX(calc(-50% - 1rem));
+    transform: translateX(-66.666667%);
   }
 }
 
@@ -1263,6 +1286,14 @@
   .menuPanelInner {
     justify-content: center;
     padding: 3rem 1.5rem 8rem;
+  }
+
+  .heroShell {
+    background-image:
+      radial-gradient(circle, rgba(0, 0, 0, 0.82) 21%, transparent 23%),
+      radial-gradient(circle, rgba(0, 0, 0, 0.82) 21%, transparent 23%);
+    background-position: 0 0, 0.26rem 0.26rem;
+    background-size: 0.52rem 0.52rem;
   }
 
   .heroFrame {

@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import styles from "./album-covers-page.module.css";
+import { SiteFooter } from "./site-footer";
 import { SiteNav } from "./site-nav";
 
 const assetBase = "/cozydesigns/album-covers";
@@ -269,6 +270,7 @@ export function AlbumCoversPage() {
         </a>
       </section>
       </main>
+      <SiteFooter />
     </>
   );
 }

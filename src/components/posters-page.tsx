@@ -17,15 +17,14 @@ export function PostersPage() {
           </p>
           <h1 className={styles.heroTitle}>RETRO COMIC POSTERS</h1>
           <p className={styles.heroIntro}>
-            Poster design by Cozy Designs blends comic-book framing, hip-hop references,
-            hand-built type, and bold print texture. Each piece is treated like a cover:
-            a clear subject, a sharp visual hook, and enough detail to reward a second look.
+            Comic-inspired poster covers built around music, film, and culture. Blending bold
+            typography, textured illustration, halftone aesthetics, and vintage comic-book framing.
           </p>
         </section>
 
         <section className={styles.grid} aria-label="Retro comic poster gallery">
           {posters.map((poster, index) => (
-            <article className={styles.card} id={poster.slug} key={poster.src}>
+            <article className={styles.card} id={poster.slug} key={poster.src} tabIndex={0}>
               <img
                 alt={poster.alt}
                 className={styles.posterImage}
@@ -38,10 +37,6 @@ export function PostersPage() {
               />
               <div className={styles.posterOverlay}>
                 <h2 className={styles.posterTitle}>{poster.title}</h2>
-                <p className={styles.posterDescription}>{poster.description}</p>
-                <a className={styles.posterLink} href={`/posters#${poster.slug}`}>
-                  /posters#{poster.slug}
-                </a>
               </div>
             </article>
           ))}
@@ -53,7 +48,7 @@ export function PostersPage() {
           rel="noreferrer"
           target="_blank"
         >
-          See more at Instagram
+          See more on Instagram
         </a>
       </main>
       <SiteFooter />

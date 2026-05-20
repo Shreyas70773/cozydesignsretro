@@ -381,15 +381,9 @@ export function CloudedPage() {
             Display typeface: Used for all headline copy across the event series. Hand-constructed 3D
             comic bold with outlined shadow.
           </TextLayer>
-          <ImageLayer
-            alt="Secondary lettering mark"
-            h={140}
-            img={{ h: 137.95, left: -0.11, top: -18.86, w: 100.08 }}
-            left={951}
-            name="img-4082.png"
-            top={8486}
-            w={261}
-          />
+          <TextLayer align="center" h={128} left={580} size={128} tag="h3" top={8486} w={760}>
+            Clouded font
+          </TextLayer>
           <ImageLayer
             alt="Artist name lettering"
             h={412}

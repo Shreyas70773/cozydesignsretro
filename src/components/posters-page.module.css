@@ -70,7 +70,7 @@
 .heroTitle {
   -webkit-text-stroke: 0.055em #050505;
   color: var(--color-cream);
-  filter: drop-shadow(0.42rem 0.58rem 0 #050505);
+  filter: drop-shadow(0.24rem 0.36rem 0 #050505);
   paint-order: stroke fill;
   position: relative;
 }
@@ -97,10 +97,20 @@
 .card {
   aspect-ratio: 4 / 5;
   background: #17191f;
+  border: 0;
   overflow: hidden;
   position: relative;
   scroll-margin-top: 8rem;
   width: 100%;
+}
+
+.card:focus {
+  outline: none;
+}
+
+.card:focus-visible {
+  outline: 3px solid var(--color-orange);
+  outline-offset: 4px;
 }
 
 .posterImage {
@@ -119,9 +129,9 @@
   color: var(--color-cream);
   display: flex;
   flex-direction: column;
-  gap: 0.55rem;
+  justify-content: flex-end;
   left: 0;
-  min-height: 42%;
+  min-height: 34%;
   opacity: 0;
   padding: clamp(0.85rem, 2vw, 1.25rem);
   position: absolute;
@@ -133,25 +143,16 @@
 }
 
 .card:hover .posterImage,
+.card:focus .posterImage,
 .card:focus-within .posterImage {
   transform: scale(1.045);
 }
 
 .card:hover .posterOverlay,
+.card:focus .posterOverlay,
 .card:focus-within .posterOverlay {
   opacity: 1;
   transform: translateY(0);
-}
-
-.posterDescription {
-  display: -webkit-box;
-  font-family: var(--font-copy);
-  font-size: clamp(0.92rem, 1.5vw, 1.1rem);
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  line-height: 1.25;
-  margin-top: auto;
-  overflow: hidden;
 }
 
 .posterTitle {
@@ -166,29 +167,6 @@
   margin: 0;
   overflow: hidden;
   text-transform: uppercase;
-}
-
-.posterLink {
-  background: var(--color-orange);
-  color: #111111;
-  display: inline-flex;
-  font-family: var(--font-body);
-  font-size: clamp(0.8rem, 1.35vw, 1rem);
-  letter-spacing: 0.04em;
-  line-height: 1;
-  max-width: 100%;
-  overflow-wrap: anywhere;
-  padding: 0.48rem 0.58rem;
-  text-transform: uppercase;
-  transition:
-    background 160ms ease,
-    transform 160ms ease;
-}
-
-.posterLink:hover,
-.posterLink:focus-visible {
-  background: var(--color-cream);
-  transform: translateY(-1px);
 }
 
 .instagram {
@@ -223,9 +201,7 @@
   }
 
   .posterOverlay {
-    min-height: 52%;
-    opacity: 1;
-    transform: none;
+    min-height: 38%;
   }
 
   .heroTitle,

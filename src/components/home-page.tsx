@@ -1,7 +1,7 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 
-import type { CSSProperties } from "react";
+import type { CSSProperties, PointerEvent } from "react";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
@@ -40,6 +40,11 @@ const carouselPosters = [
     alt: "Hunger games inspired poster",
   },
 ];
+
+const carouselPosterSets = Array.from({ length: 3 }, (_, setIndex) => ({
+  items: carouselPosters,
+  setIndex,
+}));
 
 const projectCards = [
   {
@@ -242,9 +247,99 @@ function AnimatedStatementLine({
 
 export function HomePage() {
   const [isCarouselPaused, setIsCarouselPaused] = useState(false);
+  const [carouselDragOffset, setCarouselDragOffset] = useState(0);
+  const carouselDragRef = useRef<{
+    pointerId: number;
+    startOffset: number;
+    startX: number;
+  } | null>(null);
+  const carouselSetRef = useRef<HTMLDivElement | null>(null);
+  const isCarouselHoveredRef = useRef(false);
   const [statementRef, isStatementInView] = useInView<HTMLElement>();
   const [storyRef, isStoryInView] = useInView<HTMLParagraphElement>();
   const [originRef, isOriginInView] = useInView<HTMLElement>();
+  const carouselTrackStyle = {
+    "--carousel-drag-offset": `${carouselDragOffset}px`,
+  } as CSSProperties;
+
+  function normalizeCarouselOffset(offset: number) {
+    const setWidth = carouselSetRef.current?.getBoundingClientRect().width;
+
+    if (!setWidth) {
+      return offset;
+    }
+
+    return ((((offset + setWidth / 2) % setWidth) + setWidth) % setWidth) - setWidth / 2;
+  }
+
+  function handleCarouselPointerDown(event: PointerEvent<HTMLDivElement>) {
+    if (event.pointerType === "mouse" && event.button !== 0) {
+      return;
+    }
+
+    event.preventDefault();
+    event.currentTarget.setPointerCapture(event.pointerId);
+    carouselDragRef.current = {
+      pointerId: event.pointerId,
+      startOffset: carouselDragOffset,
+      startX: event.clientX,
+    };
+    setIsCarouselPaused(true);
+  }
+
+  function handleCarouselPointerMove(event: PointerEvent<HTMLDivElement>) {
+    const dragState = carouselDragRef.current;
+
+    if (!dragState || dragState.pointerId !== event.pointerId) {
+      return;
+    }
+
+    event.preventDefault();
+    setCarouselDragOffset(
+      normalizeCarouselOffset(dragState.startOffset + event.clientX - dragState.startX),
+    );
+  }
+
+  function handleCarouselPointerEnd(event: PointerEvent<HTMLDivElement>) {
+    const dragState = carouselDragRef.current;
+
+    if (!dragState || dragState.pointerId !== event.pointerId) {
+      return;
+    }
+
+    carouselDragRef.current = null;
+
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId);
+    }
+
+    setIsCarouselPaused(isCarouselHoveredRef.current);
+  }
+
+  function pauseCarousel() {
+    isCarouselHoveredRef.current = true;
+    setIsCarouselPaused(true);
+  }
+
+  function resumeCarousel() {
+    isCarouselHoveredRef.current = false;
+
+    if (!carouselDragRef.current) {
+      setIsCarouselPaused(false);
+    }
+  }
+
+  function handleCarouselPointerEnter(event: PointerEvent<HTMLDivElement>) {
+    if (event.pointerType === "mouse" || event.pointerType === "pen") {
+      pauseCarousel();
+    }
+  }
+
+  function handleCarouselPointerLeave(event: PointerEvent<HTMLDivElement>) {
+    if (event.pointerType === "mouse" || event.pointerType === "pen") {
+      resumeCarousel();
+    }
+  }
 
   return (
     <div className={styles.page} id="top">
@@ -305,35 +400,51 @@ export function HomePage() {
         <section className={styles.carouselSection}>
           <div
             className={styles.carouselViewport}
-            onMouseEnter={() => setIsCarouselPaused(true)}
-            onMouseLeave={() => setIsCarouselPaused(false)}
+            onMouseEnter={pauseCarousel}
+            onMouseLeave={resumeCarousel}
+            onPointerCancel={handleCarouselPointerEnd}
+            onPointerDown={handleCarouselPointerDown}
+            onPointerEnter={handleCarouselPointerEnter}
+            onPointerLeave={handleCarouselPointerLeave}
+            onPointerMove={handleCarouselPointerMove}
+            onPointerUp={handleCarouselPointerEnd}
           >
             <div
-              className={`${styles.carouselTrack} ${
-                isCarouselPaused ? styles.carouselTrackPaused : ""
-              }`}
+              className={styles.carouselDragSurface}
+              style={carouselTrackStyle}
             >
-              {[...carouselPosters, ...carouselPosters].map((poster, index) => {
-                const isDuplicate = index >= carouselPosters.length;
-
-                return (
-                <article
-                  aria-hidden={isDuplicate ? "true" : undefined}
-                  className={styles.carouselCard}
-                  key={`${poster.alt}-${index}`}
-                >
-                  <img
-                    alt={isDuplicate ? "" : poster.alt}
-                    className={styles.carouselImage}
-                    decoding="async"
-                    height={1500}
-                    loading="lazy"
-                    src={poster.src}
-                    width={1200}
-                  />
-                </article>
-              );
-              })}
+              <div
+                className={`${styles.carouselTrack} ${
+                  isCarouselPaused ? styles.carouselTrackPaused : ""
+                }`}
+              >
+                {carouselPosterSets.map(({ items, setIndex }) => (
+                  <div
+                    aria-hidden={setIndex === 0 ? undefined : "true"}
+                    className={styles.carouselSet}
+                    key={setIndex}
+                    ref={setIndex === 0 ? carouselSetRef : undefined}
+                  >
+                    {items.map((poster) => (
+                      <article
+                        className={styles.carouselCard}
+                        key={`${setIndex}-${poster.alt}`}
+                      >
+                        <img
+                          alt={setIndex === 0 ? poster.alt : ""}
+                          className={styles.carouselImage}
+                          decoding="async"
+                          draggable={false}
+                          height={1500}
+                          loading="lazy"
+                          src={poster.src}
+                          width={1200}
+                        />
+                      </article>
+                    ))}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
