@@ -219,7 +219,7 @@
 
   .navBar {
     gap: 0.25rem;
-    grid-template-columns: 2rem minmax(0, 1fr) 4rem;
+    grid-template-columns: 2rem minmax(0, 1fr) 3.1rem;
     min-height: 3rem;
     padding-inline: 0.6rem;
     width: min(100%, 19.5rem);
@@ -231,13 +231,15 @@
   }
 
   .menuButton {
-    font-size: 0.98rem;
-    min-height: 2rem;
-    transform: translateY(-0.06em);
+    font-size: 0.84rem;
+    line-height: 1;
+    min-height: 1.9rem;
+    text-shadow: 0.055rem 0.085rem 0 #050505;
+    transform: translateY(0.02em);
   }
 
   .menuButton:hover {
-    transform: translateY(calc(-0.06em - 1px));
+    transform: translateY(calc(0.02em - 1px));
   }
 
   .navLogo {

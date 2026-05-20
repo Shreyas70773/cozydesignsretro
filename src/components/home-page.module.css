@@ -1271,7 +1271,7 @@
 
   .page {
     padding-top: 0;
-    padding-bottom: 0;
+    padding-bottom: calc(5.5rem + env(safe-area-inset-bottom));
   }
 
   .menuPanel {
@@ -1296,19 +1296,23 @@
     background-size: 0.52rem 0.52rem;
   }
 
+  .heroSection {
+    padding-bottom: calc(4.8rem + env(safe-area-inset-bottom));
+  }
+
   .heroFrame {
     border-radius: 1.5rem;
     padding: 1rem;
   }
 
   .heroTitle {
-    font-size: clamp(2.25rem, 10.5vw, 3.45rem);
+    font-size: clamp(2rem, 9vw, 3rem);
     letter-spacing: 0.008em;
-    line-height: 0.94;
+    line-height: 0.92;
   }
 
   .heroMedia {
-    min-height: 21rem;
+    min-height: clamp(15rem, 64vw, 18rem);
   }
 
   .heroHint {
