@@ -36,8 +36,26 @@ export const uploadDirectory = path.join(
 );
 export const uploadUrlBase = "/cozydesigns/latest-posts/uploads";
 
-function shouldUseNetlifyBlobs() {
-  return process.env.NETLIFY === "true" || Boolean(globalThis.netlifyBlobsContext);
+export class PersistentStorageUnavailableError extends Error {
+  constructor(message = "Persistent storage is unavailable in this runtime") {
+    super(message);
+    this.name = "PersistentStorageUnavailableError";
+  }
+}
+
+export function isPersistentStorageUnavailableError(
+  error: unknown,
+): error is PersistentStorageUnavailableError {
+  return error instanceof PersistentStorageUnavailableError;
+}
+
+function isReadOnlyFunctionRuntime() {
+  return (
+    process.env.NETLIFY === "true" ||
+    process.env.LAMBDA_TASK_ROOT === "/var/task" ||
+    Boolean(process.env.AWS_LAMBDA_FUNCTION_NAME) ||
+    process.cwd() === "/var/task"
+  );
 }
 
 // getStore() throws synchronously with MissingBlobsEnvironmentError when no
@@ -60,12 +78,8 @@ function getMediaStore() {
 }
 
 export async function getLatestPosts(): Promise<LatestPost[]> {
-  if (shouldUseNetlifyBlobs()) {
-    const store = getPostsStore();
-    if (!store) {
-      return [];
-    }
-
+  const store = getPostsStore();
+  if (store) {
     const posts = ((await store
       .get(postsBlobKey, { type: "json" })
       .catch((error: unknown) => {
@@ -77,6 +91,10 @@ export async function getLatestPosts(): Promise<LatestPost[]> {
       })) ?? []) as LatestPost[];
 
     return sortPosts(posts);
+  }
+
+  if (isReadOnlyFunctionRuntime()) {
+    return [];
   }
 
   try {
@@ -140,14 +158,17 @@ export async function deleteLatestPost(postId: string) {
 
 async function writeLatestPosts(posts: LatestPost[]) {
   const sortedPosts = sortPosts(posts);
+  const store = getPostsStore();
 
-  if (shouldUseNetlifyBlobs()) {
-    const store = getPostsStore();
-    if (!store) {
-      throw new Error("Netlify Blobs store unavailable in current runtime");
-    }
+  if (store) {
     await store.setJSON(postsBlobKey, sortedPosts);
     return;
+  }
+
+  if (isReadOnlyFunctionRuntime()) {
+    throw new PersistentStorageUnavailableError(
+      "Netlify Blobs is unavailable, and the deployed function filesystem is read-only.",
+    );
   }
 
   await mkdir(dataDirectory, { recursive: true });
@@ -164,13 +185,9 @@ export async function saveMediaFile({
   filename: string;
 }) {
   const mediaKey = filename;
+  const store = getMediaStore();
 
-  if (shouldUseNetlifyBlobs()) {
-    const store = getMediaStore();
-    if (!store) {
-      throw new Error("Netlify Blobs media store unavailable in current runtime");
-    }
-
+  if (store) {
     const mediaBody = bytes.buffer.slice(
       bytes.byteOffset,
       bytes.byteOffset + bytes.byteLength,
@@ -186,6 +203,12 @@ export async function saveMediaFile({
     };
   }
 
+  if (isReadOnlyFunctionRuntime()) {
+    throw new PersistentStorageUnavailableError(
+      "Netlify Blobs media storage is unavailable, and the deployed function filesystem is read-only.",
+    );
+  }
+
   await mkdir(uploadDirectory, { recursive: true });
   await writeFile(path.join(uploadDirectory, filename), bytes);
 
@@ -196,12 +219,8 @@ export async function saveMediaFile({
 }
 
 export async function getStoredMedia(mediaKey: string) {
-  if (shouldUseNetlifyBlobs()) {
-    const store = getMediaStore();
-    if (!store) {
-      return undefined;
-    }
-
+  const store = getMediaStore();
+  if (store) {
     const result = await store.getWithMetadata(mediaKey, {
       type: "arrayBuffer",
     });
@@ -217,6 +236,10 @@ export async function getStoredMedia(mediaKey: string) {
           ? result.metadata.contentType
           : "application/octet-stream",
     };
+  }
+
+  if (isReadOnlyFunctionRuntime()) {
+    return undefined;
   }
 
   const filePath = path.join(uploadDirectory, mediaKey);
@@ -242,12 +265,13 @@ async function deleteStoredMedia(post: LatestPost) {
     return;
   }
 
-  if (shouldUseNetlifyBlobs()) {
-    const store = getMediaStore();
-    if (!store) {
-      return;
-    }
+  const store = getMediaStore();
+  if (store) {
     await store.delete(post.mediaKey).catch(() => undefined);
+    return;
+  }
+
+  if (isReadOnlyFunctionRuntime()) {
     return;
   }
 

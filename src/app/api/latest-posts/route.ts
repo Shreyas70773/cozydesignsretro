@@ -5,6 +5,7 @@ import {
   createUniqueSlug,
   deleteLatestPost,
   getLatestPosts,
+  isPersistentStorageUnavailableError,
   saveMediaFile,
   saveLatestPost,
   updateLatestPost,
@@ -79,36 +80,40 @@ export async function POST(request: Request) {
     return Response.json({ error: validationError }, { status: 400 });
   }
 
-  const slug = await createUniqueSlug(title);
-  const mediaUpdate = await readMediaUpdate(formData, slug, true);
+  try {
+    const slug = await createUniqueSlug(title);
+    const mediaUpdate = await readMediaUpdate(formData, slug, true);
 
-  if ("error" in mediaUpdate) {
-    return Response.json({ error: mediaUpdate.error }, { status: 400 });
+    if ("error" in mediaUpdate) {
+      return Response.json({ error: mediaUpdate.error }, { status: 400 });
+    }
+
+    if (!hasMediaUpdate(mediaUpdate)) {
+      return Response.json({ error: "Upload a file or paste a hosted media URL." }, { status: 400 });
+    }
+
+    const post: LatestPost = {
+      id: randomUUID(),
+      title,
+      slug,
+      description,
+      alt,
+      seoTitle,
+      seoDescription,
+      seoKeywords,
+      instagramUrl: readOptionalUrl(formData, "instagramUrl"),
+      pinterestUrl: readOptionalUrl(formData, "pinterestUrl"),
+      ...mediaUpdate,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    };
+
+    await saveLatestPost(post);
+
+    return Response.json({ post }, { status: 201 });
+  } catch (error) {
+    return persistentStorageErrorResponse(error, "publish");
   }
-
-  if (!hasMediaUpdate(mediaUpdate)) {
-    return Response.json({ error: "Upload a file or paste a hosted media URL." }, { status: 400 });
-  }
-
-  const post: LatestPost = {
-    id: randomUUID(),
-    title,
-    slug,
-    description,
-    alt,
-    seoTitle,
-    seoDescription,
-    seoKeywords,
-    instagramUrl: readOptionalUrl(formData, "instagramUrl"),
-    pinterestUrl: readOptionalUrl(formData, "pinterestUrl"),
-    ...mediaUpdate,
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
-  };
-
-  await saveLatestPost(post);
-
-  return Response.json({ post }, { status: 201 });
 }
 
 export async function PATCH(request: Request) {
@@ -152,30 +157,34 @@ export async function PATCH(request: Request) {
     return Response.json({ error: validationError }, { status: 400 });
   }
 
-  const mediaUpdate = await readMediaUpdate(formData, createSlugForFilename(title), false);
+  try {
+    const mediaUpdate = await readMediaUpdate(formData, createSlugForFilename(title), false);
 
-  if ("error" in mediaUpdate) {
-    return Response.json({ error: mediaUpdate.error }, { status: 400 });
+    if ("error" in mediaUpdate) {
+      return Response.json({ error: mediaUpdate.error }, { status: 400 });
+    }
+
+    const post = await updateLatestPost(id, {
+      alt,
+      description,
+      instagramUrl: readOptionalUrl(formData, "instagramUrl"),
+      pinterestUrl: readOptionalUrl(formData, "pinterestUrl"),
+      seoDescription,
+      seoKeywords,
+      seoTitle,
+      title,
+      updatedAt: new Date().toISOString(),
+      ...mediaUpdate,
+    });
+
+    if (!post) {
+      return Response.json({ error: "Post not found." }, { status: 404 });
+    }
+
+    return Response.json({ post });
+  } catch (error) {
+    return persistentStorageErrorResponse(error, "save changes to");
   }
-
-  const post = await updateLatestPost(id, {
-    alt,
-    description,
-    instagramUrl: readOptionalUrl(formData, "instagramUrl"),
-    pinterestUrl: readOptionalUrl(formData, "pinterestUrl"),
-    seoDescription,
-    seoKeywords,
-    seoTitle,
-    title,
-    updatedAt: new Date().toISOString(),
-    ...mediaUpdate,
-  });
-
-  if (!post) {
-    return Response.json({ error: "Post not found." }, { status: 404 });
-  }
-
-  return Response.json({ post });
 }
 
 export async function DELETE(request: Request) {
@@ -189,13 +198,17 @@ export async function DELETE(request: Request) {
     return Response.json({ error: "Missing post id." }, { status: 400 });
   }
 
-  const deleted = await deleteLatestPost(body.id);
+  try {
+    const deleted = await deleteLatestPost(body.id);
 
-  if (!deleted) {
-    return Response.json({ error: "Post not found." }, { status: 404 });
+    if (!deleted) {
+      return Response.json({ error: "Post not found." }, { status: 404 });
+    }
+
+    return Response.json({ ok: true });
+  } catch (error) {
+    return persistentStorageErrorResponse(error, "delete");
   }
-
-  return Response.json({ ok: true });
 }
 
 async function readMediaUpdate(
@@ -263,6 +276,19 @@ function hasMediaUpdate(
   mediaUpdate: MediaUpdate | { error: string } | Record<string, never>,
 ): mediaUpdate is MediaUpdate {
   return "mediaUrl" in mediaUpdate && "mediaType" in mediaUpdate;
+}
+
+function persistentStorageErrorResponse(error: unknown, action: string) {
+  if (isPersistentStorageUnavailableError(error)) {
+    return Response.json(
+      {
+        error: `Could not ${action} this post because persistent storage is unavailable. Check Netlify Blobs configuration and redeploy.`,
+      },
+      { status: 503 },
+    );
+  }
+
+  throw error;
 }
 
 function createSlugForFilename(value: string) {
